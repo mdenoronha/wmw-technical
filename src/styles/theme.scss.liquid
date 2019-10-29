@@ -19,7 +19,8 @@ h6 {
 	color: $color-title-text;
 	font-weight: bold;	
 	text-align: $text-align-title;
-	margin: $margin-size-title;
+	margin: $margin-size-title 0;
+	text-decoration: none;
 }
 
 .h1 {
@@ -84,7 +85,6 @@ h6 {
 
 /*================ Text ================*/
 
-
 html {
 	body,
 	input,
@@ -95,11 +95,147 @@ html {
 	}
 }
 
+a {
+	text-decoration: none;
+}
+
 span, 
 p {
   font-size: 1em;
+  color: $color-body-text;
 
   @include media-query($medium-up) {
     font-size: $desktop-text-size;
   }
 }
+
+/*================ Buttons ================*/
+
+.btn {
+	background-color: $button-main-color;
+	color: $button-main-text-color;
+	padding: floor($standard-padding * 0.82) 0px;
+	margin: 0 auto;
+
+	&.btn-secondary {
+		background-color: $secondary-button-main-color;
+		color: $secondary-button-main-text-color;
+	}
+}
+
+.btn {
+
+	height: 42px;	
+	width: 125px;
+
+	@include media-query($medium-up) {
+		height: 55px;
+		width: 175px;
+	}
+}
+
+/*================ Carousel ================*/
+
+.collection-description {
+
+	max-width: 284px;
+	margin: 0 auto;
+	text-align: center;
+
+	@include media-query($medium-up) {
+		max-width: 611px;
+		margin: 0 auto;
+		text-align: center;
+	}
+}
+
+/*================ Carousel ================*/
+
+.main-carousel {
+
+	.flickity-prev-next-button {
+		display: none;
+	}
+
+	@include media-query($medium-up) {
+
+		margin: floor($standard-padding * 1.86) 75px 0 75px;
+
+		.flickity-prev-next-button {
+
+			display: inherit;
+
+			&.next {
+				right: -50px;
+			}
+
+			&.previous {
+				left: -50px;
+			}
+		}
+	}
+
+}
+
+.carousel-cell {
+	width: 100%;
+	padding: 0 floor($standard-padding * 0.82);
+
+	.carousel-cell__product-title {
+		text-align: left;
+		margin: floor($margin-size-title * 0.95) 0 0 0;
+	}
+
+	.carousel-cell__product-price {
+		text-align: left;
+		margin: floor($margin-text-size * 0.95) 0 0 0;
+	}
+
+	@include media-query($medium-up) {
+
+		width: 25%;
+		padding: 0 $standard-padding;
+
+		.carousel-cell__product-title {
+			text-align: left;
+			margin: floor($margin-size-title * 0.73) 0 0 0;
+		}
+
+		.carousel-cell__product-price {
+			text-align: left;
+			margin: floor($margin-text-size * 0.32) 0 0 0;
+		}
+	}
+
+	.carousel-cell__image-container {
+
+		position: relative;
+
+		img {
+			min-width: 100%;
+		}
+	}
+
+	.carousel-cell__add-cart {
+		display: none;
+		position: absolute;
+		bottom: 16px;
+		width: 80%;
+		left: 0px;
+		margin-left: auto;
+		margin-right: auto;
+		right: 0px;
+		text-align: center;
+	}
+
+	&:hover .carousel-cell__add-cart {
+		display: block;
+	}
+}
+
+
+
+
+
+
+

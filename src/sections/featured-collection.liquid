@@ -6,42 +6,54 @@
 ------------------------------------------------------------------------------
 {% endcomment %}
 
+<!-- Case when? *******  -->
+
 <section class="featured-collection" data-section-id="{{ section.id }}" data-section-type="featured-collection">
 
 
   {%- assign collection = collections[section.settings.collection] -%}
 
-  <h1 class="h1">{{ collection.title | escape }}</h1>
-  <div class="main-carousel">
-    <div class="carousel-cell">...</div>
-    <div class="carousel-cell">...</div>
-    <div class="carousel-cell">...</div>
+  <h1 class="h1">{{num}}{{ collection.title | escape }}</h1>
+  <div class="collection-description">
+    <p>{{ collection.description }}</p>
   </div>
-
-  <p>{{ collection.description }}</p>
 
   <div class="main-carousel">
     {% for product in collection.products limit: 6 %}
       {% assign current_variant = product.selected_or_first_available_variant %}
-    
-      <a href="{{ product.url | within: collection }}">
-        <div>
-          {% if product.featured_image != blank %}
-            {{ product.featured_image | img_url: 'large' | img_tag }}
-          {% endif %}
-          
-          <span js-ajax-cart="addToCart" data-variant-id="{{ current_variant.id }}" data-quantity="1">Add to cart</span>
-        </div>
+      <div class="carousel-cell">
+          <div class="carousel-cell__image-container">
+            <a href="{{ product.url | within: collection }}">
+              {% if product.featured_image != blank %}
+                {{ product.featured_image | img_url: 'large' | img_tag }}
+              {% endif %}
+            </a>
+            
+          <span class="btn h6 btn-secondary carousel-cell__add-cart" js-ajax-cart="addToCart" data-variant-id="{{ current_variant.id }}" data-quantity="1">Add to cart</span>
+         </div>
 
-        <div>
-          <p>{{ product.title | escape }}</p>
+          <div>
+            <a href="{{ product.url | within: collection }}">
+              <h5 class="h5 carousel-cell__product-title">{{ product.title | escape }}</h5>
 
-          <span>
-            {% include 'product-price' %}
-          </span>
-        </div>
-      </a>
+              <p class="carousel-cell__product-price">
+                {% include 'product-price' %}
+              </p>
+            </a>
+          </div>
+        </a>
+      </div>
     {% endfor %}
+  </div>
+
+  <a href="{{ collection.url }}">
+  <div>
+    <div class="btn h6">
+        <span >View Collection</span>
+    </div>
+  </a>
+
+  <div style="height: 900px">
   </div>
 </section>
 

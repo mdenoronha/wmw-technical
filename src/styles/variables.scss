@@ -9,6 +9,7 @@ $color-body-text: #9B9B9B;
  */
 $base-text-size: 14px;
 $desktop-text-size: 1.13em;
+$margin-text-size: 19px;
 
 /**
  * Title properties.
@@ -16,7 +17,20 @@ $desktop-text-size: 1.13em;
 $line-height-title: 49px;
 $text-align-title: center;
 $font-size-title: 40px;
-$margin-size-title: 22px 0;
+$margin-size-title: 22px;
+
+/**
+ * Padding.
+ */
+$standard-padding: 22px;
+
+/**
+ * Buttons.
+ */
+$button-main-color: #003366;
+$button-main-text-color: #FFFFFF;
+$secondary-button-main-color: #FFFFFF;
+$secondary-button-main-text-color: #003366;
 
 /**
  * Background colors.
