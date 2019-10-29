@@ -19,13 +19,33 @@ import Flickity from 'flickity';
 register('featured-collection', {
 
   init() {
-    var elem = document.querySelector('.main-carousel');
-    var flkty = new Flickity( elem, {
+    var carousel = document.querySelector('.main-carousel');
+    var flkty = new Flickity( carousel, {
       // options
       cellAlign: 'left',
       contain: true
     });
-  }, 
+
+    $('.carousel-cell__add-cart').on('click', function() {
+      let productId = $(this).data('variant-id');
+      let quantity = $(this).data('quantity');
+
+      $.ajax({
+        type: "POST",
+        url: '/cart/add.js',
+        data: {
+          quantity: quantity,
+          id: productId
+        },
+        success: function() {
+          $('.site-header__cart').css('color', '#59c359')
+          setInterval( function() {
+            $('.site-header__cart').css('color', '#9B9B9B'); 
+          }, 2000);
+        }
+      });
+    })
+  },
 
   publicMethod() {
     // Custom public section method
