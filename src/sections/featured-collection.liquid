@@ -6,9 +6,11 @@
 ------------------------------------------------------------------------------
 {% endcomment %}
 
-<!-- Case when? *******  -->
 
-<section class="featured-collection" data-section-id="{{ section.id }}" data-section-type="featured-collection">
+<section
+  class="featured-collection"
+  data-section-id="{{ section.id }}"
+  data-section-type="featured-collection">
 
 
   {%- assign collection = collections[section.settings.collection] -%}
@@ -29,7 +31,12 @@
               {% endif %}
             </a>
             
-          <div class="btn h6 btn-secondary carousel-cell__add-cart" js-ajax-cart="addToCart" data-variant-id="{{ current_variant.id }}" data-quantity="1"><span class="btn__text">Add to cart</span></div>
+          <div
+            class="btn h6 btn-secondary carousel-cell__add-cart"
+            js-ajax-cart="addToCart"
+            data-variant-id="{{ current_variant.id }}" 
+            data-quantity="1">
+              <span class="btn__text">Add to cart</span></div>
          </div>
 
           <div>

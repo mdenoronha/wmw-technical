@@ -19,14 +19,21 @@ import Flickity from 'flickity';
 register('featured-collection', {
 
   init() {
+
+    const selectors = {
+      carouselAddToCart: '.carousel-cell__add-cart',
+      siteHeaderCart: '.site-header__cart'
+    }
+
+    // Initialise Flickity
     var carousel = document.querySelector('.main-carousel');
     var flkty = new Flickity( carousel, {
-      // options
       cellAlign: 'left',
       contain: true
     });
 
-    $('.carousel-cell__add-cart').on('click', function() {
+    // AJAX quick add to cart
+    $(selectors.carouselAddToCart).on('click', function() {
       let productId = $(this).data('variant-id');
       let quantity = $(this).data('quantity');
 
@@ -38,9 +45,14 @@ register('featured-collection', {
           id: productId
         },
         success: function() {
-          $('.site-header__cart').css('color', '#59c359')
+          /**
+          * On successful add, highlight cart icon
+          * This a basic user feedback and should be replaced, possibly 
+          * with pop-up notification
+          */
+          $(selectors.siteHeaderCart).css('color', '#59c359')
           setInterval( function() {
-            $('.site-header__cart').css('color', '#9B9B9B'); 
+            $(selectors.siteHeaderCart).css('color', '#9B9B9B'); 
           }, 2000);
         }
       });
