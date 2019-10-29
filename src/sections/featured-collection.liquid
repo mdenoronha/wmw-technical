@@ -7,9 +7,16 @@
 {% endcomment %}
 
 <section class="featured-collection" data-section-id="{{ section.id }}" data-section-type="featured-collection">
+
+
   {%- assign collection = collections[section.settings.collection] -%}
 
   <h2>{{ collection.title | escape }}</h2>
+  <div class="main-carousel">
+    <div class="carousel-cell">...</div>
+    <div class="carousel-cell">...</div>
+    <div class="carousel-cell">...</div>
+  </div>
 
   <p>{{ collection.description }}</p>
 

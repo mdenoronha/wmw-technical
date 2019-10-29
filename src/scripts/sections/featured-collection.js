@@ -7,6 +7,8 @@
  * @namespace featuredCollection
  */
 import {register} from '@shopify/theme-sections';
+import $ from 'jquery';
+import Flickity from 'flickity';
 
 /**
  * Featured collection constructor
@@ -17,8 +19,13 @@ import {register} from '@shopify/theme-sections';
 register('featured-collection', {
 
   init() {
-    window.console.log('Initialising featured collection section');
-  },
+    var elem = document.querySelector('.main-carousel');
+    var flkty = new Flickity( elem, {
+      // options
+      cellAlign: 'left',
+      contain: true
+    });
+  }, 
 
   publicMethod() {
     // Custom public section method
