@@ -4,3 +4,102 @@
  * Import additional stylesheets into this sheet using CSS imports:
  * @import url('./global/form.scss');
  */
+
+ @import url('variables.scss');
+ @import url('./tools/mixins.scss');
+
+
+/*================ Headings ================*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $color-title-text;
+	font-weight: bold;	
+	text-align: $text-align-title;
+	margin: $margin-size-title;
+}
+
+.h1 {
+	font-size: $font-size-title * 0.7;
+	line-height: floor($line-height-title * 0.69);
+
+	@include media-query($medium-up) {
+    	font-size: $font-size-title;
+		line-height: floor($line-height-title);
+	}
+}
+
+.h2 {
+	font-size: $font-size-title * 0.6;
+	line-height: floor($line-height-title * 0.59);
+
+	@include media-query($medium-up) {
+    	font-size: $font-size-title * 0.9;
+		line-height: floor($line-height-title * 0.9);
+	}
+}
+
+.h3 {
+	font-size: $font-size-title * 0.53;
+	line-height: floor($line-height-title * 0.53);
+
+	@include media-query($medium-up) {
+    	font-size: $font-size-title * 0.75;
+		line-height: floor($line-height-title * 0.76);
+	}
+}
+
+.h4 {
+	font-size: $font-size-title * 0.45;
+	line-height: floor($line-height-title * 0.47);
+
+	@include media-query($medium-up) {
+    	font-size: $font-size-title * 0.6;
+		line-height: floor($line-height-title * 0.6);
+	}
+}
+
+.h5 {
+	font-size: floor($font-size-title * 0.4);
+	line-height: floor($line-height-title * 0.39);
+
+	@include media-query($medium-up) {
+    	font-size: floor($font-size-title * 0.53);
+		line-height: floor($line-height-title * 0.53);
+	}
+}
+
+.h6 {
+	font-size: floor($font-size-title * 0.35);
+	line-height: floor($line-height-title * 0.35);
+
+	@include media-query($medium-up) {
+    	font-size: floor($font-size-title * 0.45);
+		line-height: floor($line-height-title * 0.47);
+	}
+}
+
+/*================ Text ================*/
+
+
+html {
+	body,
+	input,
+	textarea,
+	button,
+	select {
+		font-size: $base-text-size;
+	}
+}
+
+span, 
+p {
+  font-size: 1em;
+
+  @include media-query($medium-up) {
+    font-size: $desktop-text-size;
+  }
+}

@@ -1,7 +1,22 @@
 /**
  * Text colors.
  */
-$color-body-text: 'aktiv-grotesk', sans-serif;
+$color-title-text: #003366;
+$color-body-text: #9B9B9B;
+
+/**
+ * Text size.
+ */
+$base-text-size: 14px;
+$desktop-text-size: 1.13em;
+
+/**
+ * Title properties.
+ */
+$line-height-title: 49px;
+$text-align-title: center;
+$font-size-title: 40px;
+$margin-size-title: 22px 0;
 
 /**
  * Background colors.
@@ -33,7 +48,7 @@ $color-success-bg: #000000;
 /**
  * Typography.
  */
-$font-heading: 'aktiv-grotesk', sans-serif;
+$font-heading: 'helvertica-neue-bold', sans-serif;
 $font-body: var(--font-body);
 $font-body-weight: var(--font-body-weight);
 $font-body-style: var(--font-body-style);
