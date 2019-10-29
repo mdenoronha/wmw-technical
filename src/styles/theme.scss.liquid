@@ -165,7 +165,7 @@ p {
 
 .main-carousel {
 
-	padding-bottom: floor($standard-padding * 2.27);
+	margin-bottom: floor($standard-padding * 2.27);
 
 	.flickity-prev-next-button {
 		display: none;
@@ -173,7 +173,7 @@ p {
 
 	@include media-query($medium-up) {
 
-		margin: floor($standard-padding * 1.86) 75px 0 75px;
+		margin: floor($standard-padding * 1.86) 75px floor($standard-padding * 2.27) 75px;
 
 		.flickity-prev-next-button {
 
