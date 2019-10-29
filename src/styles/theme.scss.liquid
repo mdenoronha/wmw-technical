@@ -112,14 +112,25 @@ p {
 /*================ Buttons ================*/
 
 .btn {
-	background-color: $button-main-color;
-	color: $button-main-text-color;
 	padding: floor($standard-padding * 0.82) 0px;
 	margin: 0 auto;
+	background-color: $button-main-color;
+
+	.btn__text {
+		color: $button-main-text-color;
+		position: absolute;
+	    top: 25%;
+	    left: 0px;
+	    text-align: center;
+	    width: 100%;
+	}
 
 	&.btn-secondary {
-		background-color: $secondary-button-main-color;
-		color: $secondary-button-main-text-color;
+		background-color: $secondary-button-color;
+
+		.btn__text {
+			color: $secondary-button-text-color;
+		}
 	}
 }
 
@@ -127,6 +138,7 @@ p {
 
 	height: 42px;	
 	width: 125px;
+	position: relative;
 
 	@include media-query($medium-up) {
 		height: 55px;
@@ -152,6 +164,8 @@ p {
 /*================ Carousel ================*/
 
 .main-carousel {
+
+	padding-bottom: floor($standard-padding * 2.27);
 
 	.flickity-prev-next-button {
 		display: none;
